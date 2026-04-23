@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Search</title>
+{% endblock %}
+
+{% block body %}
+
+<div class="card">
+    <h1>Search Product Reviews</h1>
+
+    <form action="/review" method="POST">
+        <input type="text" name="content" placeholder="Enter product name..." required>
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+{% endblock %}

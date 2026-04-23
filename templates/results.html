@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Results</title>
+{% endblock %}
+
+{% block body %}
+
+<div class="card">
+    <h1>Reviews</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Name</th>
+                <th>Rating</th>
+                <th>Heading</th>
+                <th>Comment</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        {% for review in reviews %}
+            <tr>
+                <td>{{review['Product']}}</td>
+                <td>{{review['Name']}}</td>
+                <td><span class="badge">{{review['Rating']}}</span></td>
+                <td>{{review['CommentHead']}}</td>
+                <td>{{review['Comment']}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="/" class="btn-back">⬅ Back</a>
+</div>
+
+{% endblock %}
