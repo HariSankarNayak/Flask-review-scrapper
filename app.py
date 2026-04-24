@@ -5,8 +5,8 @@ from bs4 import BeautifulSoup as bs
 import csv
 import os
 
-app = Flask(__name__)
-CORS(app)
+application = Flask(__name__)
+CORS(application)
 
 # Common headers to avoid blocking
 HEADERS = {
@@ -14,13 +14,13 @@ HEADERS = {
 }
 
 
-@app.route('/', methods=['GET'])
+@application.route('/', methods=['GET'])
 @cross_origin()
 def homePage():
     return render_template("index.html")
 
 
-@app.route('/review', methods=['POST', 'GET'])
+@application.route('/review', methods=['POST', 'GET'])
 @cross_origin()
 def index():
     if request.method == 'POST':
@@ -118,4 +118,4 @@ def index():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    application.run()
